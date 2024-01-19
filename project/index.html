@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+
+    }
+    header{
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: right;
+        
+    }
+    nav{
+        background-color: #444;
+        padding: 10px;
+        text-align: right;
+    }
+
+    nav a{
+        text-decoration: none;
+        color:#fff;
+        margin: 0 10px;
+    }
+    section {
+        padding: 20px;
+        text-align: center;
+        margin-right: 20%;
+        position: relative;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+    .title_box {
+        background-color: #ddd;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .classes_box {
+        margin-top: 20px;
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color:#fff;
+        border:none;
+        border: 5px;
+    }
+    </style>
+</head>
+
+
+<script>
+    const apiEndpoint = 'https://github.com/metapercept/CodeExcercise/blob/master/Excercise-1/data/class.json';
+    fetch(apiEndpoint)
+        .then(response => {
+            if (respose.ok) {
+                throw new Error('HTTP error! Status: $(response.,status)');
+
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data from API:', data);
+        })
+       .catch(error=> {
+        console.error("erro fetching data:", error);
+       })
+        </script>
+
+
+
+<body>
+    <header>
+    </header>
+
+    <nav>
+        <a href="#Home">home</a>
+        <a href="#about">about</a>
+        <a href="#blog">blog</a>
+        <a href="#contact">contact</a>
+        <a href="#title">title</a>
+
+        <button>button</button>
+        
+    </nav>
+    <section id ="Home">
+        <div class = "title-box"></div>
+        <div class = "classes-box"></div>
+
+    </section>
+    
+    <section id = "about">
+        <div class="title_box"></div>
+        <div class = "classes-box"></div>
+    </section>
+
+    <section id="contact">
+        <div class="title-box"></div>
+        <div class="classes-box"></div>
+    </section>
+
+    <section id="titlr">
+        <div class="title-box"></div>
+        <div class="classes-box"></div>
+    </section>
+</body>
+
+</html>
